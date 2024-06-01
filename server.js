@@ -10,8 +10,8 @@ app.use(cors());
 
 
 //挂载路由
-// app.use('/api',router)//路由路径都以/api开头
-app.use(router)
+app.use('/api',router)//路由路径都以/api开头
+// app.use(router)
 
 const port = 3000;
 app.listen(port, () => {

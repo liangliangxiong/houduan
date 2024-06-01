@@ -15,15 +15,15 @@ exports.getFourNews=(req,res)=>{
 }
 
 //拿到全部的新闻
-exports.getAllNews=(req,res)=>{
-    var sql = 'SELECT * FROM news_table'
-    pool.query(sql, (err, data) => {
-      if (err) {
-        return res.send('错误：' + err.message)
-      }
-      res.send(data)
-    })
-}
+// exports.getAllNews=(req,res)=>{
+//     var sql = 'SELECT * FROM news_table'
+//     pool.query(sql, (err, data) => {
+//       if (err) {
+//         return res.send('错误：' + err.message)
+//       }
+//       res.send(data)
+//     })
+// }
 
 //获取对应id编号的新闻
 exports.getNewById=(req,res)=>{
