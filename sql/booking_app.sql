@@ -11,7 +11,7 @@
  Target Server Version : 80404 (8.4.4)
  File Encoding         : 65001
 
- Date: 10/08/2025 23:23:31
+ Date: 11/08/2025 15:59:49
 */
 
 SET NAMES utf8mb4;
@@ -65,10 +65,31 @@ CREATE TABLE `registration` (
 -- Records of registration
 -- ----------------------------
 BEGIN;
-INSERT INTO `registration` (`id`, `activity_id`, `name`, `phone`, `remark`, `status`, `create_time`) VALUES (1, 1, '张三', '13800000001', '喜欢风景拍摄', 'approved', '2025-08-10 23:04:34');
+INSERT INTO `registration` (`id`, `activity_id`, `name`, `phone`, `remark`, `status`, `create_time`) VALUES (1, 1, 'zhangsan', '13800000001', '喜欢风景拍摄', 'approved', '2025-08-10 23:04:34');
 INSERT INTO `registration` (`id`, `activity_id`, `name`, `phone`, `remark`, `status`, `create_time`) VALUES (2, 1, '李四', '13800000002', '带单反相机', 'pending', '2025-08-10 23:04:34');
 INSERT INTO `registration` (`id`, `activity_id`, `name`, `phone`, `remark`, `status`, `create_time`) VALUES (3, 2, '王五', '13800000003', '想学习Express框架', 'approved', '2025-08-10 23:04:34');
 INSERT INTO `registration` (`id`, `activity_id`, `name`, `phone`, `remark`, `status`, `create_time`) VALUES (4, 3, '赵六', '13800000004', '第一次接触手冲咖啡', 'approved', '2025-08-10 23:04:34');
+COMMIT;
+
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '用户ID',
+  `username` varchar(50) NOT NULL COMMENT '用户名',
+  `password` varchar(255) NOT NULL COMMENT '密码',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='用户表';
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+BEGIN;
+INSERT INTO `users` (`id`, `username`, `password`) VALUES (1, 'admin', 'admin123');
+INSERT INTO `users` (`id`, `username`, `password`) VALUES (2, 'user001', 'user123');
+INSERT INTO `users` (`id`, `username`, `password`) VALUES (3, 'user002', 'user123');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
